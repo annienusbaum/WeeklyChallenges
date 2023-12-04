@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChallengesWithTestsMark8
 {
@@ -7,47 +8,115 @@ namespace ChallengesWithTestsMark8
     {
         public bool ArrayContainsAFalse(bool[] vals)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < vals.Length; i++)
+            {
+                if (vals[i] == false)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+    }
+
+    public bool IsSumOfOddsOdd(IEnumerable<int> numbers)
+    {
+        if (numbers == null || numbers.Count() == 0)
+        {
+            return false;
+        }
+        var sum = numbers.Sum();
+
+        return (sum % 2 != 0);
+    }
+
+
+
+    public bool PasswordContainsUpperLowerAndNumber(string password)
+    {
+        var isLower = false;
+        var isUpper = false;
+        var isNumber = false;
+
+        for (int i = 0; i < password.Length; i++)
+        {
+            if (char.IsLower(password[i]))
+            {
+                isLower = true;
+            }
+
+            if (char.IsUpper(password[i]))
+            {
+                isUpper = true;
+            }
+
+            if (char.IsNumber(password[i]))
+            {
+                isNumber = true;
+            }
         }
 
-        public bool IsSumOfOddsOdd(IEnumerable<int> numbers)
+        if (isLower == true && isUpper == true && isNumber == true)
         {
-            throw new NotImplementedException();
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
+    public char GetFirstLetterOfString(string val)
+    {
+        return val.First();
+    }
+
+    public char GetLastLetterOfString(string val)
+    {
+        return val[val.Length - 1];
+    }
+
+
+
+    public decimal Divide(decimal dividend, decimal divisor)
+    {
+        if (divisor == 0)
+        {
+            return 0;
         }
 
-        public bool PasswordContainsUpperLowerAndNumber(string password)
-        {
-            throw new NotImplementedException();
-        }
+        return dividend / divisor;
+    }
 
-        public char GetFirstLetterOfString(string val)
-        {
-            throw new NotImplementedException();
-        }
 
-        public char GetLastLetterOfString(string val)
-        {
-            throw new NotImplementedException();
-        }
+    public int LastMinusFirst(int[] nums)
+    {
+        return nums[nums.Length - 1] - nums[0];
+    }
 
-        public decimal Divide(decimal dividend, decimal divisor)
-        {
-            throw new NotImplementedException();
-        }
 
-        public int LastMinusFirst(int[] nums)
+    public int[] GetOddsBelow100()
+    {
+        var list = new List<int>();
+        for (int i = 0; i < 100; i++)
         {
-            throw new NotImplementedException();
+            if (i % 2 != 0)
+            {
+                list.Add(i);
+            }
         }
+        return list.ToArray();
+    }
 
-        public int[] GetOddsBelow100()
-        {
-            throw new NotImplementedException();
-        }
 
-        public void ChangeAllElementsToUppercase(string[] words)
+
+    public void ChangeAllElementsToUppercase(string[] words)
+    {
+        for (int i = 0; i < words.Length; i++)
         {
-            throw new NotImplementedException();
+            words[i] = words[i].ToUpper();
         }
     }
 }
