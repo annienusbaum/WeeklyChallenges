@@ -203,7 +203,7 @@ namespace ChallengesWithTestsMark8.Tests
             ChallengesSet05 challenger = new ChallengesSet05();
 
             // Act
-            bool actual = challenger.TwoDifferentElementsInArrayCanSumToTargetNumber(numbers, targetNumber);
+            bool actual = ChallengesSet05.TwoDifferentElementsInArrayCanSumToTargetNumber(numbers, targetNumber);
 
             // Assert
             Assert.Equal(expected, actual);
