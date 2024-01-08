@@ -109,15 +109,18 @@ namespace ChallengesWithTestsMark8
 
         public bool TwoDifferentElementsInArrayCanSumToTargetNumber(int[] nums, int targetNumber)
         {
-            for (int k = i + 1; k < nums.Length; k++)
+            for (int i = 0; i < nums.Length; i++)
             {
-                if (nums[i] + nums[k] == targetNumber)
+                for (int k = i + 1; k < nums.Length; k++)
                 {
-                    return true;
+                    if (nums[i] + nums[k] == targetNumber)
+                    {
+                        return true;
+                    }
                 }
             }
-        }
 
             return false;
         }
+    }
 }
